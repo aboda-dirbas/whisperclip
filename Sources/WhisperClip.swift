@@ -109,14 +109,14 @@ struct WhisperClip: App {
                     let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "0.0.0"
                     let alert = NSAlert()
                     alert.messageText = "\(WhisperClipAppName) \(version)"
-                    alert.informativeText = "© 2025 Cydanix LLC"
+                    alert.informativeText = "© 2025 \(WhisperClipCompanyName)"
                     alert.alertStyle = .informational
                     alert.icon = NSApp.applicationIconImage
                     alert.addButton(withTitle: "OK")
                     alert.addButton(withTitle: "Visit Website")
                     let response = alert.runModal()
                     if response == .alertSecondButtonReturn {
-                        if let url = URL(string: "https://whisperclip.com") {
+                        if let url = URL(string: WhisperClipSite) {
                             NSWorkspace.shared.open(url)
                         }
                     }

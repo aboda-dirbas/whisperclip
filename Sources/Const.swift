@@ -42,6 +42,7 @@ let TextLLMModelNames = [
 let WhisperClipAppDir = "/Applications/WhisperClip.app"
 
 let WhisperClipSite = "https://whisperclip.com"
+let WhisperClipCompanyName = "Cydanix LLC"
 
 let WhisperClipAppName = "WhisperClip"
 
