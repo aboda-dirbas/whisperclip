@@ -13,11 +13,11 @@ jobs:
     # Job-wide environment (no expressions that need the runner context)
     env:
       PACKAGE_SCHEME: WhisperClip
-      DERIVED_DATA: ${{ github.workspace }}/app/macos/.derivedData
+      DERIVED_DATA: ${{ github.workspace }}/.derivedData
 
     defaults:
       run:
-        working-directory: app/macos   # where Package.swift lives
+        working-directory: .   # where Package.swift lives
 
     steps:
     # ─────────────────────────── source checkout ──────────────────────────────
@@ -35,7 +35,7 @@ jobs:
       uses: actions/cache@v4
       with:
         path: ${{ env.DERIVED_DATA }}
-        key: ${{ runner.os }}-xcode-build-${{ hashFiles('app/macos/Package.resolved') }}
+        key: ${{ runner.os }}-xcode-build-${{ hashFiles('Package.resolved') }}
         restore-keys: |
           ${{ runner.os }}-xcode-build-
 
