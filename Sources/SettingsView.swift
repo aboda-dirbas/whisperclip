@@ -97,7 +97,7 @@ struct SettingsView: View {
                                 }
                             }
                             .pickerStyle(.menu)
-                            .onChange(of: selectedLanguage) { newValue in
+                            .onChange(of: selectedLanguage) { _, newValue in
                                 settings.language = newValue
                             }
                             
@@ -216,7 +216,7 @@ struct SettingsView: View {
                                         }
                                     }
                                     .pickerStyle(.menu)
-                                    .onChange(of: selectedModifierRawValue) { newValue in
+                                    .onChange(of: selectedModifierRawValue) { _, newValue in
                                         let modifierFlags = NSEvent.ModifierFlags(rawValue: newValue)
                                         settings.hotkeyModifier = modifierFlags
                                         updateHotkey()
@@ -233,7 +233,7 @@ struct SettingsView: View {
                                         }
                                     }
                                     .pickerStyle(.menu)
-                                    .onChange(of: selectedKeyCode) { newValue in
+                                    .onChange(of: selectedKeyCode) { _, newValue in
                                         settings.hotkeyKey = newValue
                                         hotkeyKeyString = keyCodeToString(newValue)
                                         updateHotkey()
@@ -381,13 +381,13 @@ struct SettingsView: View {
         .onAppear {
             loadCurrentSettings()
         }
-        .onChange(of: settings.language) { newValue in
+        .onChange(of: settings.language) { _, newValue in
             selectedLanguage = newValue
         }
-        .onChange(of: settings.hotkeyModifier) { newValue in
+        .onChange(of: settings.hotkeyModifier) { _, newValue in
             selectedModifierRawValue = newValue.rawValue
         }
-        .onChange(of: settings.hotkeyKey) { newValue in
+        .onChange(of: settings.hotkeyKey) { _, newValue in
             selectedKeyCode = newValue
             hotkeyKeyString = keyCodeToString(newValue)
         }

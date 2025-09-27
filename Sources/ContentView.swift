@@ -88,7 +88,7 @@ struct ContentView: View {
                                     .id("resultTextBottom")
                             }
                             .frame(height: 150)
-                            .onChange(of: resultText) { _ in
+                            .onChange(of: resultText) {
                                 withAnimation {
                                     proxy.scrollTo("resultTextBottom", anchor: .bottom)
                                 }

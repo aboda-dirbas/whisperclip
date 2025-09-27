@@ -115,7 +115,7 @@ struct OnboardingView: View {
                 ModelStorage.shared.modelExists(modelRepo: CurrentTTSModelRepo, modelName: CurrentTTSModelName) &&
                 ModelStorage.shared.isModelLoaded(modelRepo: CurrentTTSModelRepo, modelName: CurrentTTSModelName)
             },
-            progressBar: true,
+            progressBar: true
         ),
         OnboardingStep(
             title: "Download LLM Model",
@@ -153,8 +153,7 @@ struct OnboardingView: View {
                 ModelStorage.shared.modelExists(modelRepo: CurrentLLMModelRepo + "/" + CurrentLLMModelName, modelName: "") &&
                 ModelStorage.shared.isModelLoaded(modelRepo: CurrentLLMModelRepo + "/" + CurrentLLMModelName, modelName: "")
             },
-            progressBar: true,
-
+            progressBar: true
         ),
         OnboardingStep(
             title: "Accessibility Permission",
