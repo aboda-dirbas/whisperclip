@@ -2,6 +2,7 @@ import Foundation
 import ApplicationServices
 import AVFoundation
 import AppKit
+import Combine
 
 enum SecurityPermission {
     case accessibility
@@ -14,11 +15,23 @@ struct PermissionStatus {
     let message: String
 }
 
-class SecurityChecker {
+class SecurityChecker: ObservableObject {
     static let shared = SecurityChecker()
     
-    private init() {}
+    @Published var microphonePermissionGranted: Bool = false
+    @Published var accessibilityPermissionGranted: Bool = false
+    @Published var appleEventsPermissionGranted: Bool = false
+    
+    private init() {
+        updateAllPermissions()
+    }
 
+    
+    func updateAllPermissions() {
+        microphonePermissionGranted = checkMicrophonePermission().isGranted
+        accessibilityPermissionGranted = checkAccessibilityPermission().isGranted
+        appleEventsPermissionGranted = checkAppleEventsPermission().isGranted
+    }
     
     func checkAllPermissions() -> [SecurityPermission: PermissionStatus] {
         var statuses: [SecurityPermission: PermissionStatus] = [:]
@@ -130,6 +143,10 @@ class SecurityChecker {
         } else {
             Logger.log("Accessibility permission denied", log: Logger.general)
         }
+        // Update the published property to trigger UI refresh
+        DispatchQueue.main.async {
+            self.updateAllPermissions()
+        }
     }
 
     func requestMicrophonePermission() {
@@ -153,6 +170,8 @@ class SecurityChecker {
                         Logger.log("Unknown microphone permission status", log: Logger.general)
                     }
                 }
+                // Update the published property to trigger UI refresh
+                self.updateAllPermissions()
             }
         }
     }
@@ -178,6 +197,10 @@ class SecurityChecker {
             }
         } else {
             Logger.log("Failed to create AppleScript object", log: Logger.general)
+        }
+        // Update the published property to trigger UI refresh
+        DispatchQueue.main.async {
+            self.updateAllPermissions()
         }
     }
 }

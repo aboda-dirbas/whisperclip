@@ -38,8 +38,10 @@ struct OnboardingStep {
 struct OnboardingView: View {
     @Environment(\.dismiss) private var dismiss
     @ObservedObject private var settings = SettingsStore.shared
+    @ObservedObject private var securityChecker = SecurityChecker.shared
     @State private var currentStepIndex = 0
     @State private var stepProgress: Double = 0
+    @State private var permissionRefreshTimer: Timer?
 
     private static func downloadProgressToStepProgress(downloadProgress: Double) -> Double {
         if downloadProgress > 0.8 {
@@ -237,8 +239,35 @@ struct OnboardingView: View {
                 Logger.log("Error launching app: \(error)", log: Logger.general, type: .error)
             }
         }
-
+        
+        stopPermissionRefreshTimer()
         dismiss()
+    }
+    
+    private func startPermissionRefreshTimer() {
+        // Stop any existing timer
+        stopPermissionRefreshTimer()
+        
+        // Refresh permissions every 2 seconds during onboarding to catch state changes
+        permissionRefreshTimer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { _ in
+            SecurityChecker.shared.updateAllPermissions()
+            
+            // Reset stepProgress if current step is now completed (permission granted)
+            if currentStepIndex < allSteps.count {
+                let currentStep = allSteps[currentStepIndex]
+                if stepProgress > 0.0 && stepProgress < 1.0 {
+                    if let skipCondition = currentStep.skipCondition, skipCondition() {
+                        // Permission is now granted, mark step as completed to enable Next button
+                        stepProgress = 1.0
+                    }
+                }
+            }
+        }
+    }
+    
+    private func stopPermissionRefreshTimer() {
+        permissionRefreshTimer?.invalidate()
+        permissionRefreshTimer = nil
     }
 
     var body: some View {
@@ -324,6 +353,16 @@ struct OnboardingView: View {
                             Button(currentStep.buttonText) {
                                 stepProgress = 0.01
                                 action(progressCallback)
+                                
+                                // Force an immediate refresh after requesting permission
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                    SecurityChecker.shared.updateAllPermissions()
+                                    
+                                    // Set stepProgress to completed if permission was immediately granted
+                                    if let skipCondition = currentStep.skipCondition, skipCondition() {
+                                        stepProgress = 1.0
+                                    }
+                                }
                             }
                             .buttonStyle(.borderedProminent)
                             .padding(.top, 10)
@@ -379,5 +418,20 @@ struct OnboardingView: View {
         }
         .frame(width: 600, height: 500)
         .background(Color.black)
+        .onAppear {
+            // Refresh permissions when view appears
+            SecurityChecker.shared.updateAllPermissions()
+            
+            // Start a periodic refresh timer during onboarding
+            startPermissionRefreshTimer()
+        }
+        .onDisappear {
+            // Stop the refresh timer when onboarding is dismissed
+            stopPermissionRefreshTimer()
+        }
+        .onReceive(NotificationCenter.default.publisher(for: NSApplication.didBecomeActiveNotification)) { _ in
+            // Refresh permissions when app becomes active (user might have granted permission in System Settings)
+            SecurityChecker.shared.updateAllPermissions()
+        }
     }
 }

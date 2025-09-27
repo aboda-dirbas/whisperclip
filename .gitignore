@@ -8,3 +8,4 @@
 .env.production.local
 build
 release
+*.profraw
