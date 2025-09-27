@@ -10,7 +10,7 @@
 [![macOS](https://img.shields.io/badge/macOS-14%2B-blue.svg)](https://www.apple.com/macos/)
 [![Swift](https://img.shields.io/badge/Swift-5.10-orange.svg)](https://swift.org)
 
-[Website](https://whisperclip.com) • [Download](https://whisperclip.com/download) • [Support](https://whisperclip.com/support)
+[Website](https://whisperclip.com) • [Download](https://whisperclip.com/v2/download) • [Support](mailto:support@cydanix.com)
 
 </div>
 
@@ -194,7 +194,7 @@ This means you can:
 WhisperClip is developed by **Cydanix LLC**.
 
 - **Website**: [whisperclip.com](https://whisperclip.com)
-- **Support**: [whisperclip.com/support](https://whisperclip.com/support)
+- **Support**: [support@cydanix.com](mailto:support@cydanix.com)
 - **Version**: 1.0.43
 
 ## 🙏 Acknowledgments
